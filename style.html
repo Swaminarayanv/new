@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhangar Innovation Factory</title>
+  <!-- Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Variables for easy customization */
+    :root {
+      --primary-color: #5b2153;
+      --secondary-color: #3d3b54;
+      --accent-color: #e63946;
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --white: #ffffff;
+    }
+
+    /* Global resets */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Header styling with gradient background and subtle shadow */
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      color: var(--white);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    /* Sticky Navigation Bar */
+    nav {
+      background: var(--secondary-color);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--white);
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: var(--accent-color);
+    }
+
+    /* Main container */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Section styling */
+    .section {
+      background: var(--white);
+      margin: 15px;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex: 1 1 800px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .section h1 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .section h3 {
+      font-size: 1.4rem;
+      color: var(--secondary-color);
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .section p,
+    .section li {
+      margin: 10px 0;
+      text-align: justify;
+    }
+
+    ul {
+      list-style: disc inside;
+    }
+
+    /* Inner container inside About Us for extra content */
+    .inner-container {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: var(--bg-color);
+      border-radius: 8px;
+    }
+
+    /* Footer styling */
+    footer {
+      background: var(--secondary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 30px;
+    }
+
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent-color);
+      color: var(--white);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      font-size: 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+      z-index: 100;
+    }
+
+    #backToTop:hover {
+      background: var(--primary-color);
+    }
+
+    /* Fade in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav a {
+        flex: 1 1 100%;
+        padding: 12px;
+      }
+      .section {
+        padding: 20px;
+        margin: 10px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .section h1 {
+        font-size: 1.5rem;
+      }
+      .section h2 {
+        font-size: 1.3rem;
+      }
+      .section h3 {
+        font-size: 1.1rem;
+      }
+      .section p, .section li {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Dhangar Innovation Factory</h1>
+    <p>Empowering innovation for a brighter future.</p>
+  </header>
+
+  <nav>
+    <a href="#ai-tools">AI Tools</a>
+    <a href="#ai">AI Overview</a>
+    <a href="readmore.html">Read More</a>
+    <a href="#about-us">About Us</a>
+  </nav>
+
+  <div class="container">
+    <!-- AI Tools Section -->
+    <div class="section" id="ai-tools">
+      <h1>AI Tools</h1>
+      <p>Explore the various AI tools we recommend to enhance your learning and productivity:</p>
+      <ul>
+        <li>
+          <a href="https://www.grammarly.com" target="_blank">Grammarly</a>
+          <p>Grammarly is an AI-powered writing assistant designed to help users improve grammar, punctuation, and writing style, making written communication more effective and error-free. It features real-time grammar checking, vocabulary suggestions, and tone adjustments, providing an all-in-one solution for enhancing writing quality.</p>
+        </li>
+        <li>
+          <a href="https://www.khanacademy.org" target="_blank">Khan Academy</a>
+          <p>Khan Academy is an AI-enhanced educational platform that provides free, world-class education to anyone, anywhere. It features subjects ranging from math to history, with adaptive learning paths for personalized education.</p>
+        </li>
+        <li>
+          <a href="https://www.wolframalpha.com" target="_blank">Wolfram Alpha</a>
+          <p>Wolfram Alpha is a computational search engine designed to answer factual queries and solve complex mathematical problems with detailed step-by-step solutions.</p>
+        </li>
+        <li>
+          <a href="https://www.quizlet.com" target="_blank">Quizlet</a>
+          <p>Quizlet is an AI-powered platform that helps students study using customizable flashcards, practice tests, and interactive learning tools.</p>
+        </li>
+        <li>
+          <a href="https://www.duolingo.com" target="_blank">Duolingo</a>
+          <p>Duolingo is an AI-driven language learning platform that offers interactive lessons in multiple languages with gamified elements for consistent practice.</p>
+        </li>
+        <li>
+          <a href="https://www.notion.so" target="_blank">Notion AI</a>
+          <p>Notion AI automates tasks like note-taking, summarizing content, and organizing information within the Notion workspace, boosting productivity.</p>
+        </li>
+        <li>
+          <a href="https://chat.openai.com" target="_blank">ChatGPT</a>
+          <p>ChatGPT is a conversational AI developed by OpenAI that assists with text generation, answering questions, and providing creative ideas in an interactive dialogue.</p>
+        </li>
+        <li>
+          <a href="https://socratic.org" target="_blank">Socratic by Google</a>
+          <p>Socratic is an AI-powered app that helps students with homework by providing detailed explanations and educational resources based on a photo of the question.</p>
+        </li>
+        <li>
+          <a href="https://www.deepl.com" target="_blank">DeepL Translator</a>
+          <p>DeepL Translator is an advanced AI tool that provides high-quality translations, preserving the nuance and context of the original text.</p>
+        </li>
+        <li>
+          <a href="https://otter.ai" target="_blank">Otter.ai</a>
+          <p>Otter.ai is an AI-powered transcription service that converts spoken words into written text in real time, ideal for lectures and meetings.</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- AI Overview Section -->
+    <div class="section" id="ai">
+      <h1>AI Overview</h1>
+      <p>Artificial Intelligence (AI): A Detailed Overview</p>
+      <h2>1. Definition of AI</h2>
+      <p>AI is the field of computer science focused on creating systems capable of performing tasks that typically require human intelligence. This includes activities like learning, reasoning, problem-solving, language understanding, and perception.</p>
+      
+      <h2>2. History of AI</h2>
+      <ul>
+        <li><strong>1950s:</strong> The term "Artificial Intelligence" was coined by John McCarthy; early research focused on symbolic methods and problem-solving.</li>
+        <li><strong>1960s-1970s:</strong> Early AI applications emerged in areas like chess and theorem proving.</li>
+        <li><strong>1980s:</strong> The rise of machine learning allowed systems to be trained using data rather than fixed rules.</li>
+        <li><strong>1990s-2000s:</strong> Big data and enhanced computational power led to significant advancements in AI.</li>
+        <li><strong>2010s-Present:</strong> Deep learning and neural networks have driven breakthroughs in image/speech recognition and language processing.</li>
+      </ul>
+      
+      <h2>3. Core Disciplines of AI</h2>
+      <h3>A. Machine Learning (ML)</h3>
+      <ul>
+        <li><strong>What it is:</strong> A method of data analysis that automates the building of analytical models.</li>
+        <li><strong>How it works:</strong> ML algorithms learn from data by identifying patterns and making decisions with minimal human intervention.</li>
+        <li><strong>Key Concepts:</strong>
+          <ul>
+            <li><strong>Training:</strong> Feeding large amounts of data to the machine.</li>
+            <li><strong>Prediction:</strong> Using the learned model to make decisions based on new data.</li>
+          </ul>
+        </li>
+        <li><strong>Types of Machine Learning:</strong>
+          <ul>
+            <li>Supervised Learning: Learning from labeled data.</li>
+            <li>Unsupervised Learning: Discovering patterns in unlabeled data.</li>
+            <li>Reinforcement Learning: Learning by trial and error with rewards.</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <h3>B. Deep Learning</h3>
+      <ul>
+        <li><strong>What it is:</strong> A subset of ML based on deep neural networks.</li>
+        <li><strong>How it works:</strong> Mimics the human brain’s structure to recognize complex patterns.</li>
+        <li><strong>Applications:</strong> Image/speech recognition, natural language processing, and autonomous driving.</li>
+      </ul>
+      
+      <h3>C. Natural Language Processing (NLP)</h3>
+      <ul>
+        <li><strong>What it is:</strong> A field that enables machines to read, understand, and derive meaning from human language.</li>
+        <li><strong>Applications:</strong>
+          <ul>
+            <li>Text classification (e.g., spam detection).</li>
+            <li>Machine translation.</li>
+            <li>Chatbots and virtual assistants.</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <h3>D. Computer Vision</h3>
+      <ul>
+        <li><strong>What it is:</strong> Training computers to interpret and make decisions based on visual data.</li>
+        <li><strong>How it works:</strong> Uses algorithms to detect, recognize, and classify objects in images/videos.</li>
+        <li><strong>Applications:</strong> Facial recognition, medical imaging, autonomous vehicles.</li>
+      </ul>
+      
+      <h3>E. Robotics</h3>
+      <ul>
+        <li><strong>What it is:</strong> The design, construction, and operation of robots.</li>
+        <li><strong>AI in Robotics:</strong> Enables autonomous decision-making and task execution.</li>
+      </ul>
+      
+      <h2>4. AI Techniques and Algorithms</h2>
+      <ul>
+        <li>Decision Trees</li>
+        <li>Neural Networks</li>
+        <li>Genetic Algorithms</li>
+      </ul>
+      
+      <h2>5. Real-World Applications of AI</h2>
+      <ul>
+        <li>Healthcare: Diagnosing diseases, personalized medicine, robotic surgeries.</li>
+        <li>Finance: Fraud detection, credit scoring, algorithmic trading.</li>
+        <li>Education: Personalized learning experiences, automated grading.</li>
+        <li>Transportation: Self-driving cars, traffic management.</li>
+        <li>Retail: Product recommendations, inventory management.</li>
+      </ul>
+      
+      <h2>6. Ethical and Social Implications</h2>
+      <ul>
+        <li>Bias and Fairness</li>
+        <li>Privacy concerns</li>
+        <li>Job Displacement</li>
+        <li>Decision Transparency</li>
+      </ul>
+      
+      <h2>7. The Future of AI</h2>
+      <ul>
+        <li>Advancements in AI technologies</li>
+        <li>Integration in everyday life</li>
+        <li>Impact on society and global challenges</li>
+      </ul>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="section" id="about-us">
+      <h1>About Us</h1>
+      <p>Dhangar Innovation Factory (DIF) is a groundbreaking initiative aimed at empowering the Dhangar community by fostering innovation, creativity, and technological advancements. Our vision is to create an ecosystem where ideas are transformed into impactful solutions that address community challenges while contributing to the global tech landscape.</p>
+      
+      <div class="inner-container">
+        <h1>Dhangar Innovation Factory (DIF): Empowering Students with AI Knowledge</h1>
+        <p>Artificial Intelligence (AI) is rapidly transforming industries and societies worldwide. Recognizing its importance, DIF was founded to equip students with essential AI knowledge and skills. Our mission is to make AI education accessible, practical, and engaging through thoughtfully designed workshops.</p>
+        
+        <h2>The Vision Behind DIF</h2>
+        <p>We aim to bridge the gap between students and emerging AI technologies. DIF offers workshops that are:</p>
+        <ul>
+          <li><strong>Accessible:</strong> For students from diverse backgrounds.</li>
+          <li><strong>Interactive:</strong> Engaging and hands-on for better retention.</li>
+          <li><strong>Comprehensive:</strong> Covering AI fundamentals, applications, and career opportunities.</li>
+        </ul>
+        
+        <h2>4-Day AI Workshops</h2>
+        <p>Our flagship program provides a solid foundation in AI while inspiring curiosity and creativity. Here’s a breakdown:</p>
+        
+        <h3>Day 1: Introduction to AI</h3>
+        <ul>
+          <li><strong>What is AI?</strong> Basics and its importance.</li>
+          <li><strong>History of AI:</strong> From inception to modern breakthroughs.</li>
+          <li><strong>AI Around Us:</strong> Real-world applications like virtual assistants and recommendation systems.</li>
+          <li><strong>Hands-On Activity:</strong> Identifying AI-powered technologies in daily life.</li>
+        </ul>
+        
+        <h3>Day 2: Core Concepts of AI</h3>
+        <ul>
+          <li><strong>Machine Learning (ML):</strong> How machines learn from data.</li>
+          <li><strong>Types of Learning:</strong> Supervised, unsupervised, and reinforcement learning.</li>
+          <li><strong>Deep Learning:</strong> An introduction to neural networks.</li>
+          <li><strong>Activity:</strong> A coding exercise demonstrating ML concepts.</li>
+        </ul>
+        
+        <h3>Day 3: Applications of AI</h3>
+        <ul>
+          <li><strong>Natural Language Processing (NLP):</strong> Enabling machines to understand human language.</li>
+          <li><strong>Computer Vision:</strong> Training machines to interpret visual data.</li>
+          <li><strong>AI in Robotics:</strong> Enhancing robotic functionality with AI.</li>
+          <li><strong>Activity:</strong> Designing a basic chatbot or image recognition model.</li>
+        </ul>
+        
+        <h3>Day 4: Practical Learning and Certification</h3>
+        <ul>
+          <li><strong>Ethical Considerations:</strong> Discussing bias, fairness, and privacy.</li>
+          <li><strong>Career Opportunities:</strong> Highlighting AI-related roles.</li>
+          <li><strong>Test and Certification:</strong> Assessing knowledge and awarding certificates.</li>
+        </ul>
+        
+        <h2>The Importance of Practical Learning</h2>
+        <p>We believe students learn best by applying concepts to real-world scenarios. Through interactive exercises and hands-on activities, DIF helps students build critical thinking and problem-solving skills.</p>
+        
+        <h2>Benefits for Students</h2>
+        <ul>
+          <li><strong>Early Exposure:</strong> Sparking interest in AI from a young age.</li>
+          <li><strong>Skill Development:</strong> Building foundational skills in AI and programming.</li>
+          <li><strong>Confidence:</strong> Empowering students to tackle complex technologies.</li>
+          <li><strong>Networking:</strong> Connecting with like-minded peers and mentors.</li>
+          <li><strong>Certifications:</strong> Recognizing achievements and understanding of AI fundamentals.</li>
+        </ul>
+        
+        <h2>The Role of Certification</h2>
+        <p>Certification serves as both motivation and a valuable addition to academic portfolios, reflecting a student’s grasp of AI fundamentals for future opportunities.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Dhangar Innovation Factory. All rights reserved.</p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to Top">&#8679;</button>
+  <script>
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
